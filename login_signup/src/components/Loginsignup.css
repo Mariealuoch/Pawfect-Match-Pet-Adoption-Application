@@ -1,13 +1,16 @@
 body {
   margin: 0;
   height: 120vh;
-  background: linear-gradient(rgb(238, 235, 231), rgba(254, 187, 2, 0.645), black);
+  background: url('./Assets/y.jpeg') no-repeat center fixed ;
+  background-size:contain;
+
 }
   
 .container {
-  background: url('./Assets/u.jpeg') no-repeat center center fixed;
+  background: linear-gradient(rgba(225, 222, 225, 0.303), rgb(250, 197, 4), rgba(238, 237, 230, 0.156));
+
   display:flex;
-  width: 700px;
+  width: 800px;
   height: 600px;
   margin: 100px auto;
   margin-top: 200px;
@@ -28,13 +31,13 @@ body {
 .text {
   font-size: 48px;
   font-weight: 700;
-  color: rgb(255, 143, 5);
+  color: rgb(255, 98, 0);
 }
 
 .underline {
   width: 61px;
   height: 6px;
-  background: rgb(255, 143, 5);
+  background: rgb(255, 98, 0);
   border-radius: 9px;
   margin: 0 auto;
 }
