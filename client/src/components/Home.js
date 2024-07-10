@@ -9,11 +9,12 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001/Pets')
+    fetch('http://localhost:4001/Pets')
       .then(res => res.json())
       .then(data => {
         setPets(data);
-        setFilteredPets(data); // Initialize filtered pets with all pets
+        setFilteredPets(data);
+        console.log(data)
       });
   }, []);
 
