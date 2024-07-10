@@ -1,6 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 import './Loginsignup.css';
+import ErrorBox from './ErrorBox';  // Import the ErrorBox component
 
 import user_icon from './Assets/person.png';
 import email_icon from './Assets/email.png';
@@ -10,14 +13,22 @@ const LoginSignup = () => {
   const [action, setAction] = useState("LOGIN");
 
   useEffect(() => {
-    // Disable scrolling when the component mounts and action changes
     document.body.style.overflow = action === "SIGN UP" ? 'hidden' : 'hidden';
-
-    // Clean up function to reset the overflow property when the component unmounts
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [action]);
+
+  const validationSchema = Yup.object({
+    username: action === "SIGN UP" ? Yup.string().required('Username is required') : Yup.string(),
+    email: Yup.string().email('Invalid email address').required('Email is required'),
+    password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required')
+  });
+
+  const handleSubmit = (values, { setSubmitting }) => {
+    console.log(values);
+    setSubmitting(false);
+  };
 
   return (
     <div className="container">
@@ -25,24 +36,46 @@ const LoginSignup = () => {
         <div className="text">{action}</div>
         <div className="underline"></div>
       </div>
-      
-      <div className="inputs">
-        {action === "LOGIN" ? null : (
-          <div className="input">
-            <img src={user_icon} alt="User Icon" />
-            <input type="text" placeholder="Username" />
-          </div>
+
+      <Formik
+        initialValues={{ username: '', email: '', password: '' }}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {({ isSubmitting, errors, touched }) => (
+          <Form className="inputs">
+            {action === "LOGIN" ? null : (
+              <div className="input">
+                <img src={user_icon} alt="User Icon" />
+                <Field type="text" name="username" placeholder="Username" />
+                {errors.username && touched.username ? (
+                  <ErrorBox message={errors.username} />
+                ) : null}
+              </div>
+            )}
+            
+            <div className="input">
+              <img src={email_icon} alt="Email Icon" />
+              <Field type="email" name="email" placeholder="Email" />
+              {errors.email && touched.email ? (
+                <ErrorBox message={errors.email} />
+              ) : null}
+            </div>
+            <div className="input">
+              <img src={password_icon} alt="Password Icon" />
+              <Field type="password" name="password" placeholder="Password" />
+              {errors.password && touched.password ? (
+                <ErrorBox message={errors.password} />
+              ) : null}
+            </div>
+            <div className="submit-container">
+              <button type="submit" disabled={isSubmitting} className="submit">
+                Submit
+              </button>
+            </div>
+          </Form>
         )}
-        
-        <div className="input">
-          <img src={email_icon} alt="Email Icon" />
-          <input type="email" placeholder="Email" />
-        </div>
-        <div className="input">
-          <img src={password_icon} alt="Password Icon" />
-          <input type="password" placeholder="Password" />
-        </div>
-      </div>
+      </Formik>
 
       <div className="submit-container">
         <div 
