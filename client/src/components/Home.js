@@ -9,11 +9,12 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001/Pets')
+    fetch('http://127.0.0.1:5555/pets')
       .then(res => res.json())
       .then(data => {
         setPets(data);
-        setFilteredPets(data); // Initialize filtered pets with all pets
+        setFilteredPets(data);
+        console.log(data)
       });
   }, []);
 
@@ -57,6 +58,7 @@ function Home() {
 
   return (
     <div>
+   
       <Navbar />
       <div className="container ms-0">
         <div className="d-flex align-items-center justify-content-between">
