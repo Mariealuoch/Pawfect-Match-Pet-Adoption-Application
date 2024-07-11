@@ -1,14 +1,21 @@
-import Home from "./components/Home";
+import Header from "./components/HomePage";
+import Home from "./components/Logged";
 import PetCard from "./components/PetCard";
 import Logged from "./components/Logged"
 import MyPets from "./components/MyPets"
-import CreatePet from "./CreatePet"
+import CreatePet from "./components/CreatePet";
+import Footer from "./components/Footer";
+import Contacts from "./components/Contacts";
 
 
 const routes = [
     {
       path: "/",
-      element: <Home />
+      element: <Header />
+    },
+    {
+      path:'/home',
+      element:<Home/>
     },
     {
         path:"/pet/:id",
@@ -25,6 +32,15 @@ const routes = [
     {
       path:"/CreatePet",
       element:<CreatePet />
+    },
+    {
+      path:'/aboutus',
+      element:<Footer/>
+    },
+    {
+      path:'/contacts',
+      element:<Contacts/>
     }
+  
 ]
 export default routes;
