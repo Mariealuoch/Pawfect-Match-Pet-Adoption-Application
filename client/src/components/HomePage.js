@@ -37,8 +37,8 @@ const Header = () => {
           </nav>
         </div>
       </header>
-      <div className='adoption-container'>
-        <p className='adoption-text'>ADOPT. DON'T SHOP.</p>
+      <div className='adoption-container d-flex'>
+        <p className='adoption-text '>ADOPT. DON'T SHOP.</p>
         </div>
       <div className="carousel">
         <div className="slides" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>

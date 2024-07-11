@@ -103,10 +103,11 @@ body {
 }
 .adoption-text {
   text-align:justify ;
-  color: #f9690e; /* White text color */
-  font-size: 3em; /* Adjust font size as needed */
+  color: #f9690e;
+  font-size: 3em; 
   font-weight: bold;
-  margin: 0;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .contacts {
@@ -190,4 +191,5 @@ body {
 .active {
   opacity: 1;
 }
+
 

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
 import user_icon from './Assets/person.png';
 import email_icon from './Assets/email.png';
 import password_icon from './Assets/password.png';
-import './HomePage.css'
+import './HomePage.css';
 
 const LoginSignup = () => {
   const [action, setAction] = useState("LOGIN");
@@ -19,42 +18,36 @@ const LoginSignup = () => {
   }, [action]);
 
   return (
-    <div className="container">
-      <div className="header">
-        <div className="text">{action}</div>
-        <div className="underline"></div>
+    <div className="container-login">
+      <div className="header-login">
+        <div className="text-login">{action}</div>
+        <div className="underline-login"></div>
       </div>
       
-      <div className="inputs">
+      <div className="inputs-login">
         {action === "LOGIN" ? null : (
-          <div className="input">
+          <div className="input-login">
             <img src={user_icon} alt="User Icon" />
             <input type="text" placeholder="Username" />
           </div>
         )}
         
-        <div className="input">
+        <div className="input-login">
           <img src={email_icon} alt="Email Icon" />
           <input type="email" placeholder="Email" />
         </div>
-        <div className="input">
+        <div className="input-login">
           <img src={password_icon} alt="Password Icon" />
           <input type="password" placeholder="Password" />
         </div>
       </div>
 
-      <div className="submit-container">
+      <div className="submit-container-login">
         <div 
           className={action === "LOGIN" ? "submit gray" : "submit"} 
-          onClick={() => setAction("SIGN UP")}
+          onClick={() => setAction(action === "LOGIN" ? "SIGN UP" : "LOGIN")}
         >
-          SIGN UP
-        </div>
-        <div 
-          className={action === "SIGN UP" ? "submit gray" : "submit"} 
-          onClick={() => setAction("LOGIN")}
-        >
-          LOGIN
+          {action === "LOGIN" ? "SIGN UP" : "LOG IN"}
         </div>
       </div>
     </div>

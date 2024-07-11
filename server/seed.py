@@ -21,7 +21,7 @@ with app.app_context():
     pet4 = Pet(name='Karen', pet_type='Dog', breed='Beagle', age=4, location='KSPCA', image_url='https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBldHN8ZW58MHx8MHx8fDA%3D',description='')
     pet5 = Pet(name='Rose', pet_type='Dog', breed='Beagle', age=4, location='KSPCA', image_url='https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGV0c3xlbnwwfHwwfHx8MA%3D%3D',description='')
     pet6 = Pet(name='Cutie', pet_type='Cat', breed='Beagle', age=4, location='KSPCA', image_url='https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGV0c3xlbnwwfHwwfHx8MA%3D%3D',description='')
-    pet7 = Pet(name='Mike', pet_type='Cat', breed='Beagle', age=4, location='KSPCA', image_url='https://images.unsplash.com/photo-1554224155-6720d53d28b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGRvZ3xlbnwwfHx8MHx8fA%3D%3D',description='')
+    pet7 = Pet(name='Paul', pet_type='Cat', breed='Beagle', age=4, location='KSPCA', image_url='https://images.unsplash.com/photo-1554224155-6720d53d28b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGRvZ3xlbnwwfHx8MHx8fA%3D%3D',description='')
     pet8 = Pet(name='linda', pet_type='Dog', breed='Beagle', age=4, location='KSPCA', image_url='https://images.unsplash.com/photo-1598933272407-bd763ca0c25d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNhdHxlbnwwfHx8MHx8fA%3D%3D',description='')
     pets = [pet1, pet2, pet3,pet4,pet5,pet6,pet7,pet8]
 
