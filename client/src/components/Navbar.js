@@ -3,7 +3,10 @@ import { Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+
+import { TbLayoutNavbarExpand } from "react-icons/tb";
 
 function Navbar() {
   const [username, setUsername] = useState('');
@@ -42,11 +45,10 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light custom-navcolor">
         <a className="navbar-brand" href="#">
-<<<<<<< HEAD
-          <Link className='link' to={"/"}><h2 className="ms-3 main-text-color">Pawfect Match</h2></Link>
-=======
+
+
           <Link className='link' to={"/home"}><h2 className="ms-3 text-color">Pawfect Match</h2></Link>
->>>>>>> origin/React-components
+
         </a>
         <button
           className="navbar-toggler"
@@ -56,7 +58,7 @@ function Navbar() {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+        ><TbLayoutNavbarExpand />
           <span className="navbar-toggler-icon"></span>
         </button>
 

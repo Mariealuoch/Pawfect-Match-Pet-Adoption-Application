@@ -4,13 +4,12 @@ import PetCard from "./components/PetCard";
 import Logged from "./components/Logged"
 import MyPets from "./components/MyPets"
 
-import CreatePet from "./CreatePet"
 import Adoptions from "./components/Adoptions";
 
 import CreatePet from "./components/CreatePet";
 import Footer from "./components/Footer";
 import Contacts from "./components/Contacts";
-
+import Loginsignup from'./components/Loginsignup';
 
 
 const routes = [
@@ -31,7 +30,7 @@ const routes = [
       element:<Logged />
     },
     {
-      path:"/MyPets",
+      path:"/Pawlist",
       element:<MyPets />
     },
     {
@@ -42,14 +41,17 @@ const routes = [
 
       path:"/user_adoptions",
       element:<Adoptions />
-
+    },{
       path:'/aboutus',
       element:<Footer/>
     },
     {
       path:'/contacts',
       element:<Contacts/>
-
+    },
+    {
+      path:'/login',
+      element:<Loginsignup/>
     }
   
 ]

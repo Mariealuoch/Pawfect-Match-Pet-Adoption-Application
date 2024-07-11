@@ -38,6 +38,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 .nav-links li {
@@ -103,10 +104,11 @@ body {
 }
 .adoption-text {
   text-align:justify ;
-  color: #f9690e; /* White text color */
-  font-size: 3em; /* Adjust font size as needed */
+  color: #f9690e;
+  font-size: 3em; 
   font-weight: bold;
-  margin: 0;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .contacts {
@@ -126,6 +128,27 @@ body {
   margin-right: 10px;
 }
 
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
 /* Adjust z-index to ensure proper layering */
 /* .slide:nth-child(1) { z-index: 4; }
 .slide:nth-child(2) { z-index: 3; }
@@ -189,5 +212,110 @@ body {
 
 .active {
   opacity: 1;
+}
+
+/* HomePage.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #f4f4f4; 
+
+}
+.background-image-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%; /* Adjust height as needed */
+  background: url('../images/Word-Paw Power - Jumbo.jpeg') no-repeat center bottom;
+  background-size: cover;
+  z-index: -1;
+}
+
+
+.header-login {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text-login {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.underline-login {
+  width: 50px;
+  height: 3px;
+  background-color: #ff6f61;
+  margin: 10px auto;
+}
+
+.inputs-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-login {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #f9690e;;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-login img {
+  margin-right: 10px;
+}
+
+.input-login input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.submit-container-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.submit {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit.gray {
+  background-color: #bbb;
+}
+
+.submit:hover {
+  background-color: #ff4f41;
 }
 

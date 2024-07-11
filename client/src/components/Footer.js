@@ -47,7 +47,30 @@ function Footer() {
                       </div>
                   </div>
               </div>
+
           </div>
+
+            </div>
+            </div>
+            </div>
+            
+           
+        {/* Bottom Links Section */}
+        <div className="container mt-4 ">
+          <div className="row">
+            <div className="col-md-3 ">
+              <a href="#" className="text-color">Home</a>
+            </div>
+            <div className="col-md-3">
+              <a href="#" className="text-color">Donate</a>
+            </div>
+            <div className="col-md-3">
+              <a href="#" className="text-color">Terms Of Business</a>
+            </div>
+            <div className="col-md-3">
+              <a href="#" className="text-color">Privacy Policy</a>
+            </div>
+
 
           {/* Bottom Links Section */}
           <div className="container mt-4">
