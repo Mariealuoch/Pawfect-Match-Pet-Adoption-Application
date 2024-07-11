@@ -15,6 +15,7 @@ function Navbar() {
   function handleLogIn(e) {
     e.preventDefault();
     setIsLoading(true);
+
     fetch("/login", {
       method: "POST",
       headers: {
@@ -40,7 +41,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light navbar-color">
         <a className="navbar-brand" href="#">
-          <Link className='link' to={"/"}><h2 className="ms-3 text-color">Pawfect Match</h2></Link>
+          <Link className='link' to={"/home"}><h2 className="ms-3 text-color">Pawfect Match</h2></Link>
         </a>
         <button
           className="navbar-toggler"
