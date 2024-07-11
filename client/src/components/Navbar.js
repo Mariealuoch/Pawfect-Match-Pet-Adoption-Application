@@ -16,6 +16,7 @@ function Navbar() {
   function handleLogIn(e) {
     e.preventDefault();
     setIsLoading(true);
+
     fetch("/login", {
       method: "POST",
       headers: {
@@ -41,7 +42,11 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light custom-navcolor">
         <a className="navbar-brand" href="#">
+<<<<<<< HEAD
           <Link className='link' to={"/"}><h2 className="ms-3 main-text-color">Pawfect Match</h2></Link>
+=======
+          <Link className='link' to={"/home"}><h2 className="ms-3 text-color">Pawfect Match</h2></Link>
+>>>>>>> origin/React-components
         </a>
         <button
           className="navbar-toggler"

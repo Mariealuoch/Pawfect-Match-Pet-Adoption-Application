@@ -53,6 +53,7 @@ function Home() {
 
   return (
     <div>
+   
       <Navbar />
       <div className="container ms-0">
         <div className="d-flex align-items-center justify-content-between">
