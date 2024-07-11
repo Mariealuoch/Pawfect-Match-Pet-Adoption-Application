@@ -1,25 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { FaHome, FaListUl, FaInfoCircle, FaEnvelope, FaRegUser } from 'react-icons/fa';
+import React from 'react';
+import { FaHome, FaListUl, FaInfoCircle, FaEnvelope, FaRegUser, FaPaw } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { FaPaw } from 'react-icons/fa';
+import GridSlide from './GridSlide';
 import './HomePage.css'; 
 
-const Header = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const HomePage = () => {
   const images = [
-   '/images/_ (7).jpeg',
-   '/images/15cbd6c8-ddc0-4bb7-8df6-106ed00124fd.jpeg',
-   '/images/72bd9641-1ab9-4c75-aba5-f76b7f8c3f25.jpeg',
-   '/images/cat and dogg🥰.jpeg',
-   
-  ];
+    require('../images/_ (7).jpeg'),
+    require('../images/15cbd6c8-ddc0-4bb7-8df6-106ed00124fd.jpeg'),
+    require('../images/72bd9641-1ab9-4c75-aba5-f76b7f8c3f25.jpeg'),
+    require('../images/cat and dogg🥰.jpeg'),
+    require('../images/4340b660-8182-4063-b1da-92dc2c6a4f04.jpeg'), 
+    require('../images/cat and dogg🥰.jpeg'),
+    require('../images/_ (11).jpeg'),
+    require('../images/_ (10).jpeg'),
+    require('../images/_ (13).jpeg'),
+    require('../images/Los nombres de mascotas más populares.jpeg'),
+    require('../images/Paw Print.jpeg'),
+    require('../images/_ (14).jpeg'),
+    require('../images/_ (16).jpeg'),
+    require('../images/_ (15).jpeg'),
+    require('../images/14 Dog Portraits That Show The Adorably Human Side Of Pups.jpeg'),
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  ];
 
   return (
     <div>
@@ -39,18 +42,10 @@ const Header = () => {
       </header>
       <div className='adoption-container d-flex'>
         <p className='adoption-text '>ADOPT. DON'T SHOP.</p>
-        </div>
-      <div className="carousel">
-        <div className="slides" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {images.map((image, index) => (
-            <div className="slide" key={index}>
-              <img src={image} alt={`Slide ${index}`} />
-            </div>
-          ))}
-        </div>
       </div>
+      <GridSlide images={images} />
     </div>
   );
 };
 
-export default Header;
+export default HomePage;
