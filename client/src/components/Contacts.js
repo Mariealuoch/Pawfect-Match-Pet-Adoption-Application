@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaEnvelope, FaPhone, FaTwitter, FaFacebook, FaInstagram, FaGit } from 'react-icons/fa';
-
+import './Contacts.css'
 const Contacts = () => {
   return (
-    <div className="contacts">
+    <div className='contacts-section'>
+    <div className="contact-us">
       <h2>Contact Us</h2>
       <ul className="contact-list">
         <li>
@@ -31,6 +32,8 @@ const Contacts = () => {
 
         </li>
       </ul>
+    </div>
+    <div className="contacts-image"></div>
     </div>
   );
 };

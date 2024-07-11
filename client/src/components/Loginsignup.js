@@ -50,6 +50,7 @@ const LoginSignup = () => {
           {action === "LOGIN" ? "SIGN UP" : "LOG IN"}
         </div>
       </div>
+      <div className="background-image-bottom"></div>
     </div>
   );
 };
