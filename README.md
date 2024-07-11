@@ -87,7 +87,7 @@ To get a local copy up and running, follow these steps.
 
 1. Navigate to the backend directory:
    ```sh
-   cd pets-adoption-app/server
+   cd PAWFECT-MATCH-PET-ADOPTION-APPLICATION/server
 
 2. Create a virtual environment:
 
@@ -115,7 +115,7 @@ To get a local copy up and running, follow these steps.
 1. Navigate to the frontend directory:
 
       ```sh
-    cd PAWFECT-MATCH-PET_ADOPTION_APPLICATION/client
+    cd PAWFECT-MATCH-PET-ADOPTION-APPLICATION/client
 
 
 2. Install the dependencies:
