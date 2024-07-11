@@ -15,7 +15,7 @@ function Navbar() {
   function handleLogIn(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("http://localhost:4001/Pets", {
+    fetch("http://127.0.0.1:5555/pets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
