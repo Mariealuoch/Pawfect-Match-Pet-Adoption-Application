@@ -6,6 +6,7 @@ import MyPets from "./components/MyPets"
 import CreatePet from "./components/CreatePet";
 import Footer from "./components/Footer";
 import Contacts from "./components/Contacts";
+import LoginSignup from "./components/Loginsignup";
 
 
 const routes = [
@@ -26,7 +27,7 @@ const routes = [
       element:<Logged />
     },
     {
-      path:"/MyPets",
+      path:"/Pawlist",
       element:<MyPets />
     },
     {
@@ -40,7 +41,10 @@ const routes = [
     {
       path:'/contacts',
       element:<Contacts/>
-    }
-  
+    },
+  {
+    path:'/login',
+    element:<LoginSignup/>
+  }
 ]
 export default routes;

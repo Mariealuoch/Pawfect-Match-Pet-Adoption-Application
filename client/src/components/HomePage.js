@@ -29,9 +29,9 @@ const Header = () => {
           <nav>
             <ul className="nav-links">
               <li><Link to="/home"><FaHome /> Home</Link></li>
-              <li><Link to="/Mypets"><FaListUl /> Pet Listings</Link></li>
+              <li><Link to="/Pawlist"><FaListUl /> Pawlist</Link></li>
               <li><Link to="/aboutus"><FaInfoCircle /> About Us</Link></li>
-              <li><Link to="/logged"><FaRegUser /> User</Link></li>
+              <li><Link to="/login"><FaRegUser /> User</Link></li>
               <li><Link to="/contacts"><FaEnvelope /> Contact Us</Link></li>
             </ul>
           </nav>
