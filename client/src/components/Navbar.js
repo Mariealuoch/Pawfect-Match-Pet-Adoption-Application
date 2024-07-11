@@ -3,6 +3,7 @@ import { Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { TbLayoutNavbarExpand } from "react-icons/tb";
 
 function Navbar() {
   const [username, setUsername] = useState('');
@@ -51,7 +52,7 @@ function Navbar() {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+        ><TbLayoutNavbarExpand />
           <span className="navbar-toggler-icon"></span>
         </button>
 

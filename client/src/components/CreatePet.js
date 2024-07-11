@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LoggedNav from './LoggedNav';
-
-
+import './CreatePet.css';
 
 function CreatePet(){
     const [pets, setPets] = useState([]);
@@ -101,17 +100,7 @@ function CreatePet(){
                     Add Pet
                 </button>
             </form>
-            <ul>
-                {pets.map((pet) => (
-                    <li key={pet.id}>
-                        <div>Name: {pet.name}</div>
-                        <div>Age: {pet.age}</div>
-                        <div>Breed: {pet.breed}</div>
-                        <div>Description: {pet.description}</div>
-                        <button onClick={() => handleDelete(pet.id)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+        
         </div>
     );
 };

@@ -9,6 +9,7 @@ import Adoptions from "./components/Adoptions";
 import CreatePet from "./components/CreatePet";
 import Footer from "./components/Footer";
 import Contacts from "./components/Contacts";
+import Loginsignup from'./components/Loginsignup';
 
 
 const routes = [
@@ -47,6 +48,10 @@ const routes = [
     {
       path:'/contacts',
       element:<Contacts/>
+    },
+    {
+      path:'/login',
+      element:<Loginsignup/>
     }
   
 ]
