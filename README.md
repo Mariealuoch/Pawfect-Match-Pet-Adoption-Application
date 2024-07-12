@@ -6,7 +6,7 @@ The Pawfect Match Pet Adoption Application is a web-based platform designed to f
 
 ## Project Description
 
-Th Pawfect Match Pet Adoption Application is designed to streamline the process of adopting pets, providing a robust platform for managing users, pets, and adoption records. With a focus on usability and data integrity, it ensures a smooth and efficient experience for all users involved in the pet adoption process.
+The Pawfect Match Pet Adoption Application is designed to streamline the process of adopting pets, providing a robust platform for managing users, pets and adoption records. With a focus on usability and data integrity, it ensures a smooth and efficient experience for all users involved in the pet adoption process.
 
 ## Project Features
 
@@ -41,7 +41,7 @@ Th Pawfect Match Pet Adoption Application is designed to streamline the process 
 - **Adopt Pet**: Allows recording an adoption by selecting a user, a pet, and specifying the adoption date through a form.
 
 ### Navigation Functionalities
-- **Navigation**: Provides easy navigation between Home, Users, Pets, Shelters, and Adoption pages.
+- **Navigation**: Provides easy navigation between Home, Users, Pets and Adoption pages.
 
 ### Validation Functionalities
 - **User Input Validations**:
@@ -70,7 +70,7 @@ To get a local copy up and running, follow these steps.
    ```sh
    cd PAWFECT-MATCH-PET-ADOPTION-APPLICATION/server
 
-2. Create a virtual environment:
+2. Download the dependencies:
 
    ```sh
    pipenv install
@@ -84,7 +84,7 @@ To get a local copy up and running, follow these steps.
 4. Run the Flask app:
    
    ```sh
-   flask run
+   python app.py
 
 
 ### Frontend Installation
