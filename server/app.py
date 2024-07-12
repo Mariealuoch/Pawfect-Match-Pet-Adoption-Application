@@ -116,7 +116,10 @@ api.add_resource(CurrentUser, '/current_user')
 class Pets(Resource):
 
     def get(self):
-        pets_list = [pet.to_dict() for pet in Pet.query.all()]
+        adopted_pet_ids = db.session.query(Adoption.pet_id).distinct()
+        available_pets = Pet.query.filter(Pet.id.notin_(adopted_pet_ids)).all()
+
+        pets_list = [pet.to_dict() for pet in available_pets]
 
         return pets_list, 200
 
