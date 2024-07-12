@@ -17,7 +17,7 @@ function DisplayPets({ pets }) {
   };
 
   return (
-    <div className="container mt-5 pet-card">
+    <div className="container mt-5">
       <div className="row">
         {pets.slice(currentIndex, currentIndex + 4).map((pet, index) => (
           <div className="col-md-3" key={index}>
