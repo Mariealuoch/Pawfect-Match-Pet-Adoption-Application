@@ -7,7 +7,9 @@ function Footer() {
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title text-color">About Us</h5>
-                                <p className="card-text text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p className="card-text text-color">At Pawfect Match, we are dedicated to connecting loving families with their perfect furry 
+                                    companions, ensuring a joyful and lifelong bond. Our mission is to provide a seamless and compassionate adoption experience, 
+                                    helping pets find their forever homes and bringing happiness to both pets and adopters alike.</p>
                             </div>
                         </div>
                     </div>

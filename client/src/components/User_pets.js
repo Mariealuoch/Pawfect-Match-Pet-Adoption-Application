@@ -65,7 +65,7 @@ function Adoptions() {
                   <h5 className="card-title">{pet.name}</h5>
                   <p className="card-text">Age: {pet.age}</p>
                   <p className="card-text">Breed: {pet.breed}</p>
-                  <p className="card-text">Description: {pet.description}</p>
+                  <p className="card-text"><span className="fs-6 fw-bold">Description: </span> {pet.description}</p>
                 </div>
                 <div className="btn-group">
                   <Link to={`/modifypet/${pet.id}`}><button className="btn btn-custom logout-btn">Modify Pet</button></Link>
