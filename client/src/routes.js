@@ -1,25 +1,17 @@
-import Header from "./components/HomePage";
-import Home from "./components/Logged";
+import Home from "./components/Home";
 import PetCard from "./components/PetCard";
 import Logged from "./components/Logged"
 import MyPets from "./components/MyPets"
-
+import CreatePet from "./CreatePet"
 import Adoptions from "./components/Adoptions";
-
-import CreatePet from "./components/CreatePet";
-import Footer from "./components/Footer";
-import Contacts from "./components/Contacts";
-import Loginsignup from'./components/Loginsignup';
+import ModifyPet from "./components/ModifyPet"
+import CreateUser from "./components/CreateUser"
 
 
 const routes = [
     {
       path: "/",
-      element: <Header />
-    },
-    {
-      path:'/home',
-      element:<Home/>
+      element: <Home />
     },
     {
         path:"/pet/:id",
@@ -30,7 +22,7 @@ const routes = [
       element:<Logged />
     },
     {
-      path:"/Pawlist",
+      path:"/MyPets",
       element:<MyPets />
     },
     {
@@ -38,21 +30,16 @@ const routes = [
       element:<CreatePet />
     },
     {
-
       path:"/user_adoptions",
       element:<Adoptions />
-    },{
-      path:'/aboutus',
-      element:<Footer/>
     },
     {
-      path:'/contacts',
-      element:<Contacts/>
+      path:"/modifypet/:id",
+      element:<ModifyPet />
     },
     {
-      path:'/login',
-      element:<Loginsignup/>
+      path:"/signup",
+      element:<CreateUser />
     }
-  
 ]
 export default routes;

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom';
 import LoggedNav from "./LoggedNav";
+import User_pets from "./User_pets"
+import Footer from "./Footer";
 
 function Adoptions(){
 const [pets, setPets]=useState([])
 const [currentIndex, setCurrentIndex] = useState(0);
-
 useEffect(() => {
     fetch('/user_adoptions')
         .then(res => {
@@ -16,6 +17,7 @@ useEffect(() => {
         })
         .then(data => {
             setPets(data);
+            console.log(data)
         })
         .catch(error => {
             console.error('Error fetching user adoptions:', error);
@@ -35,6 +37,7 @@ useEffect(() => {
           setCurrentIndex(currentIndex - 4);
         }
       };
+      console.log(pets)
     return(
         <div>
         <LoggedNav />
@@ -50,7 +53,7 @@ useEffect(() => {
                     <h5 className="card-title">{pet.pet.name}</h5>
                     <p className="card-text">Age: {pet.pet.age}</p>
                     <p className="card-text">Breed: {pet.pet.breed}</p>
-                    <p className="card-text">Breed: {pet.pet.description}</p>
+                    <p className="card-text">Description: {pet.pet.description}</p>
                   </div>
               </div>
             </div>
@@ -69,6 +72,8 @@ useEffect(() => {
           )}
         </div>
       </div>
+      <User_pets />
+        <Footer />
       </div>
     )
 

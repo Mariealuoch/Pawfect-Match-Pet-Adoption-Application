@@ -88,7 +88,7 @@ class Users(Resource):
         data = request.get_json()
 
         new_user = User(
-            name=data['name'],
+            name=data['username'],
             email=data['email'],
         )
 
@@ -156,14 +156,15 @@ class PetsByID(Resource):
             return pet.to_dict(), 200
         else:
             return {"error": "Pet not found"}, 404
-    def patch(self, id):
+    @app.route("/pets/<int:id>", methods=['PATCH'])
+    def patch(id):
 
         pet = Pet.query.filter_by(id=id).first()
 
         if pet:
 
-            for attr in request.form:
-                setattr(pet, attr, request.form[attr])
+            for attr in request.get_json():
+                setattr(pet, attr, request.get_json()[attr])
 
             db.session.add(pet)
             db.session.commit()
@@ -173,7 +174,8 @@ class PetsByID(Resource):
             return response_dict, 200
         else:
             return {"error": "Pet not found"}, 404
-    def delete(self, id):
+    @app.route("/pets/<int:id>", methods=['DELETE'])
+    def delete(id):
 
         pet = Pet.query.filter_by(id=id).first()
 
@@ -185,7 +187,7 @@ class PetsByID(Resource):
         else:
             return {"error": "Pet not found"}, 404
 
-#api.add_resource(PetsByID, '/pets/<int:id>')
+api.add_resource(PetsByID, '/pets/<int:id>')
 
 
 class Adoptions(Resource):
