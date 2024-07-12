@@ -6,7 +6,7 @@ The Pawfect Match Pet Adoption Application is a web-based platform designed to f
 
 ## Project Description
 
-Th Pawfect Match Pet Adoption Application is designed to streamline the process of adopting pets, providing a robust platform for managing users, pets, shelters, and adoption records. With a focus on usability and data integrity, it ensures a smooth and efficient experience for all users involved in the pet adoption process.
+Th Pawfect Match Pet Adoption Application is designed to streamline the process of adopting pets, providing a robust platform for managing users, pets, and adoption records. With a focus on usability and data integrity, it ensures a smooth and efficient experience for all users involved in the pet adoption process.
 
 ## Project Features
 
