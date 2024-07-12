@@ -41,6 +41,9 @@ useEffect(() => {
     return(
         <div>
         <LoggedNav />
+        <div>
+        <h1 className="main-text-color">Adopted Pets</h1>
+      </div>
         <div className="container mt-5">
         <div className="row">
           {pets.slice(currentIndex, currentIndex + 4).map((pet, index) => (
@@ -53,7 +56,7 @@ useEffect(() => {
                     <h5 className="card-title">{pet.pet.name}</h5>
                     <p className="card-text">Age: {pet.pet.age}</p>
                     <p className="card-text">Breed: {pet.pet.breed}</p>
-                    <p className="card-text">Description: {pet.pet.description}</p>
+                    <p className="card-text"><span className="fs-6 fw-bold">Description: </span> {pet.pet.description}</p>
                   </div>
               </div>
             </div>
@@ -61,12 +64,12 @@ useEffect(() => {
         </div>
         <div className="pagination-container d-flex justify-content-center">
           {currentIndex > 0 && (
-            <button className="btn btn-primary mx-2" onClick={previousPets}>
+            <button className="btn logout-btn mx-2" onClick={previousPets}>
               Back
             </button>
           )}
           {currentIndex + 4 < pets.length && (
-            <button className="btn btn-primary mx-2" onClick={nextPets}>
+            <button className="btn logout-btn mx-2" onClick={nextPets}>
               Next
             </button>
           )}

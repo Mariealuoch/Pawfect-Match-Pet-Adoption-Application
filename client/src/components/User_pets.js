@@ -65,7 +65,7 @@ function Adoptions() {
                   <h5 className="card-title">{pet.name}</h5>
                   <p className="card-text">Age: {pet.age}</p>
                   <p className="card-text">Breed: {pet.breed}</p>
-                  <p className="card-text">Description: {pet.description}</p>
+                  <p className="card-text"><span className="fs-6 fw-bold">Description: </span> {pet.description}</p>
                 </div>
                 <div className="btn-group">
                   <Link to={`/modifypet/${pet.id}`}><button className="btn btn-custom logout-btn">Modify Pet</button></Link>
@@ -77,12 +77,12 @@ function Adoptions() {
         </div>
         <div className="pagination-container d-flex justify-content-center">
           {currentIndex > 0 && (
-            <button className="btn btn-primary mx-2" onClick={previousPets}>
+            <button className="btn logout-btn mx-2" onClick={previousPets}>
               Back
             </button>
           )}
           {currentIndex + 4 < pets.length && (
-            <button className="btn btn-primary mx-2" onClick={nextPets}>
+            <button className="btn logout-btn mx-2" onClick={nextPets}>
               Next
             </button>
           )}

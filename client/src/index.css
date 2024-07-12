@@ -179,3 +179,7 @@ body, html {
 .btn-delete {
   font-size: 0.875rem; /* Smaller font size */
 }
+.reduced-width {
+  max-width: 300px; /* Adjust this value to your desired width */
+  width: 100%;
+}

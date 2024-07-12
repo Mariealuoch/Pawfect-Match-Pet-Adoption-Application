@@ -4,19 +4,17 @@ import Navbar from './Navbar';
 import DisplayPets from './DisplayPets';
 import LoggedNav from './LoggedNav';
 
-
 function Home() {
   const [pets, setPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-
   useEffect(() => {
     fetch('/pets')
       .then(res => res.json())
       .then(data => {
         setPets(data);
         setFilteredPets(data);
-        console.log(data)
+        console.log('Fetched pets:', data);
       });
   }, []);
 
@@ -28,12 +26,10 @@ function Home() {
         if (a.breed > b.breed) return 1;
         return 0;
       });
-    }
-    else if (sortBy === 'age') {
+    } else if (sortBy === 'age') {
       sortedPets.sort((a, b) => a.age - b.age);
     }
 
- 
     setPets(sortedPets);
     setFilteredPets(sortedPets);
   };
@@ -53,11 +49,11 @@ function Home() {
     });
     setFilteredPets(filteredData);
   };
-
+  console.log(filteredPets)
   return (
     <div> 
-        <LoggedNav />
-          <div className="container ms-0">
+      <LoggedNav />
+      <div className="container ms-0">
         <div className="d-flex align-items-center justify-content-between">
           <div className="sort-container" style={{ margin: '0' }}>
             <span>Sort:</span>

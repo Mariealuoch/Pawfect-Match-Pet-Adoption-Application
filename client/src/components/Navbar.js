@@ -22,7 +22,7 @@ function Navbar() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({username}),
+      body: JSON.stringify({username, password}),
     })
     .then((r) => {
       setIsLoading(false);
@@ -92,7 +92,7 @@ function Navbar() {
         aria-labelledby="offcanvasLoginLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasLoginLabel">
+          <h5 className="offcanvas-title main-text-color" id="offcanvasLoginLabel">
             Login/Register
           </h5>
           <button
