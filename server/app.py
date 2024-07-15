@@ -1,26 +1,11 @@
 from datetime import datetime
-from flask_migrate import Migrate
-from models import db, User, Pet, Adoption
+from flask_restful import Resource
 from flask import Flask, request, make_response, jsonify, session
-from flask_restful import Api, Resource
-from flask_cors import CORS
-import os
-
 from models import db, User, Pet, Adoption
+import os
+from config import bcrypt
 
-app = Flask(__name__)
-CORS(app)
-app.secret_key = b'Y\xf1Xz\x00\xad|eQ\x80t \xca\x1a\x10K'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.json.compact = False
-
-migrate = Migrate(app, db)
-
-db.init_app(app)
-
-api = Api(app)
-
+from config import app, db, api
 @app.route("/")
 def index():
     return "<h1>Pawfect Match</h1>"
@@ -58,7 +43,7 @@ api.add_resource(CheckSession, '/check_session')
 #Login
 class Login(Resource):
 
-    def post(self):
+  def post(self):
         data = request.get_json()
         username = data.get('username')
         #password = data.get('password')  # You should check the password as well
@@ -84,7 +69,6 @@ class Users(Resource):
         return users_list, 200
 
     def post(self):
-
         data = request.get_json()
 
         new_user = User(
@@ -92,11 +76,13 @@ class Users(Resource):
             email=data['email'],
         )
 
+        # Set the password using the password_hash property
+        new_user.password_hash = data['password']
+
         db.session.add(new_user)
         db.session.commit()
 
         response_dict = new_user.to_dict()
-
         return response_dict, 201
 
 api.add_resource(Users, '/users')

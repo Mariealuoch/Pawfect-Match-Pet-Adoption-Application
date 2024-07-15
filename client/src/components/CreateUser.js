@@ -5,10 +5,7 @@ import * as Yup from 'yup';
 import LoggedNav from './LoggedNav';
 import Footer from './Footer';
 import { useNavigate, Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import {FaPaw } from 'react-icons/fa';
-
+import { FaPaw } from 'react-icons/fa';
 
 function CreateUser() {
   const initialValues = {
@@ -29,7 +26,7 @@ function CreateUser() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState(null);
-  const [signUpSuccess, setSignUpSuccess] = useState(false); // State to track sign-up success
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
 
   const handleSubmit = (values, { setSubmitting }) => {
     setIsLoading(true);
@@ -38,7 +35,7 @@ function CreateUser() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: values.username, password: values.password, email: values.email }),
+      body: JSON.stringify(values),
     })
       .then((r) => {
         setIsLoading(false);
@@ -46,13 +43,13 @@ function CreateUser() {
           return r.json();
         } else {
           return r.json().then((err) => {
-            throw new Error(err.errors);
+            throw new Error(err.errors || r.statusText);
           });
         }
       })
       .then((user) => {
         setSubmitting(false);
-        setSignUpSuccess(true); // Set success state
+        setSignUpSuccess(true);
         console.log(user);
       })
       .catch((error) => {
@@ -63,9 +60,9 @@ function CreateUser() {
 
   return (
     <div>
-       <nav className="navbar navbar-expand-lg custom-navcolor ">
+      <nav className="navbar navbar-expand-lg custom-navcolor">
         <a className="navbar-brand" href="#">
-        <Link className='link' to={"/"}><h2 className="ms-3 main-text-color">Pawfect Match<FaPaw /></h2></Link>
+          <Link className='link' to={"/"}><h2 className="ms-3 main-text-color">Pawfect Match<FaPaw /></h2></Link>
         </a>
         <button
           className="navbar-toggler"
@@ -79,13 +76,11 @@ function CreateUser() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
-  <div className="navbar-nav">
-    {/* This div is empty intentionally to create spacing on the left side */}
-  </div>
-  
-</div>
-
-        </nav>
+          <div className="navbar-nav">
+            {/* This div is empty intentionally to create spacing on the left side */}
+          </div>
+        </div>
+      </nav>
       <div className="container mt-5 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
         <div className="form-container">
           <h2 className='main-text-color text-center'>Sign Up</h2>
@@ -102,16 +97,15 @@ function CreateUser() {
                   <ErrorMessage name="username" component="div" className="error" style={{ color: 'red' }} />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password</label>
-                  <Field type="text" id="password" name="password" className="form-control reduced-width" />
-                  <ErrorMessage name="password" component="div" className="error" style={{ color: 'red' }} />
-                </div>
-                <div className="mb-3">
                   <label htmlFor="email" className="form-label">Email</label>
                   <Field type="email" id="email" name="email" className="form-control reduced-width" />
                   <ErrorMessage name="email" component="div" className="error" style={{ color: 'red' }} />
                 </div>
-
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <Field type="password" id="password" name="password" className="form-control reduced-width" />
+                  <ErrorMessage name="password" component="div" className="error" style={{ color: 'red' }} />
+                </div>
                 <button type="submit" className="btn logout-btn" disabled={isSubmitting || isLoading}>
                   {isSubmitting || isLoading ? 'Submitting...' : 'Sign Up'}
                 </button>
@@ -126,7 +120,8 @@ function CreateUser() {
           </Formik>
           {signUpSuccess && (
             <div className="mt-3 text-center">
-              <p>Sign up successful! You can now login.</p>
+            <p className="text-success">Sign up successful! You can now login.</p>
+
               <Link to="/">
                 <button className="btn logout-btn">Login</button>
               </Link>

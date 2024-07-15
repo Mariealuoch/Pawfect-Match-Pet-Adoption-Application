@@ -96,6 +96,7 @@ console.log(currentUser)
           <h5 className="card-title">{pet.name}</h5>
           <p className="card-text">Age: {pet.age}</p>
           <p className="card-text">Breed: {pet.breed}</p>
+          <p className="card-text">Location: {pet.location}</p>
           {/* <button
             className={`btn logout-btn btn-${isFavorite ? "danger" : "outline-primary"} mr-3`}
             onClick={toggleFavorite}
