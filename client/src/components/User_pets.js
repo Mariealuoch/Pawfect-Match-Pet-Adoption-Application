@@ -65,6 +65,7 @@ function Adoptions() {
                   <h5 className="card-title">{pet.name}</h5>
                   <p className="card-text">Age: {pet.age}</p>
                   <p className="card-text">Breed: {pet.breed}</p>
+                  <p className="card-text"><span className="fs-6 fw-bold">Location: </span> {pet.location}</p>
                   <p className="card-text"><span className="fs-6 fw-bold">Description: </span> {pet.description}</p>
                 </div>
                 <div className="btn-group">

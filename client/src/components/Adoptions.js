@@ -56,6 +56,7 @@ useEffect(() => {
                     <h5 className="card-title">{pet.pet.name}</h5>
                     <p className="card-text">Age: {pet.pet.age}</p>
                     <p className="card-text">Breed: {pet.pet.breed}</p>
+                    <p className="card-text"><span className="fs-6 fw-bold">Location: </span> {pet.pet.location}</p>
                     <p className="card-text"><span className="fs-6 fw-bold">Description: </span> {pet.pet.description}</p>
                   </div>
               </div>
